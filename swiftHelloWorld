@@ -1,3 +1,11 @@
+//
+//  ViewController.swift
+//  SwiftHelloWorld4
+//
+//  Created by Jared Watkins on 6/24/14.
+//  Copyright (c) 2014 Jared Watkins. All rights reserved.
+//
+
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -11,17 +19,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
+    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+    
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier:"MyTestCell")
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "MyCell")
+        
         cell.text = "Hello World!"
         
         return cell
     }
-
+    
 }
+
